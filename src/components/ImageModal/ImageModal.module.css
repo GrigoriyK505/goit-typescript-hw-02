@@ -1,0 +1,63 @@
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-green-300);
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding: 20px;
+    max-width: 80vw;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modalImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* 🔹 Адаптивність для планшетів */
+@media (max-width: 768px) {
+    .Modal {
+        max-width: 90vw;
+        max-height: 70vh;
+        padding: 15px;
+    }
+
+    .modalImage {
+        max-height: 70vh;
+    }
+}
+
+/* 🔹 Адаптивність для мобільних телефонів */
+@media (max-width: 480px) {
+    .Modal {
+        max-width: 95vw;
+        max-height: 65vh;
+        padding: 10px;
+    }
+
+    .modalImage {
+        max-height: 60vh;
+    }
+}

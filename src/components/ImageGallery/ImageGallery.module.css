@@ -1,0 +1,48 @@
+/* Загальний стиль для галереї */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Стиль для елементів галереї */
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Ефект при наведенні на елемент */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивність для малих екранів (телефони) */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        /* Одна колонка для дуже маленьких екранів */
+        gap: 8px;
+        /* Зменшуємо відстань між елементами */
+    }
+}
+
+/* Для середніх екранів (планшети в ландшафтному режимі) */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* Дві колонки для середніх екранів */
+    }
+}
+
+/* Для великих екранів (комп'ютери) */
+@media (min-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        /* Чотири колонки для великих екранів */
+    }
+}
