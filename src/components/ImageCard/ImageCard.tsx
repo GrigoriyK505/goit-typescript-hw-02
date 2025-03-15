@@ -1,6 +1,11 @@
 import s from './ImageCard.module.css'
 
-const ImageCard = ({ item, openModal }) => {
+type ImageCardProps = {
+    item: SelectImage;
+    openModal: (imageUrl: string) => void; 
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({ item, openModal }) => {
     return (
         <div>
             <img

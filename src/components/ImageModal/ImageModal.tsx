@@ -3,7 +3,13 @@ import s from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ modalIsOpen, closeModal, targetImage }) => {
+type ImageModalprops = {
+  modalIsOpen: boolean;
+  targetImage: string | null;
+  closeModal: () => void;
+}
+
+const ImageModal: React.FC<ImageModalprops> = ({ modalIsOpen, closeModal, targetImage }) => {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -13,7 +19,7 @@ const ImageModal = ({ modalIsOpen, closeModal, targetImage }) => {
       overlayClassName={s.Overlay}
     >
       <div className={s.modalContent}>
-        <img src={targetImage} alt="Large view" className={s.modalImage} />
+        {targetImage && <img src={targetImage} alt="Large view" className={s.modalImage} />}
       </div>
     </Modal>
   );

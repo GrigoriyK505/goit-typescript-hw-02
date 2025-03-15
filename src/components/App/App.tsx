@@ -1,22 +1,23 @@
+import React, { MouseEvent } from 'react';
 import s from './App.module.css'
-import fetchRequest from '../services/api';
+import fetchRequest from '../../services/api';
 import toast, { Toaster } from 'react-hot-toast';
-import ImageGallery from './ImageGallery/ImageGallery'
-import Loader from './Loader/Loader';
-import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
-import SearchBar from './SearchBar/SearchBar'
-import ErrorMessage from './ErrorMessage/ErrorMessage';
-import ImageModal from './ImageModal/ImageModal';
 import { useEffect, useState } from 'react';
+import ImageGallery from '../ImageGallery/ImageGallery';
+import Loader from '../Loader/Loader';
+import SearchBar from '../SearchBar/SearchBar';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import ImageModal from '../ImageModal/ImageModal';
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [articles, setArticles] = useState([])
-  const [targetImage, setTargetImage] = useState(null)
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
+  const [articles, setArticles] = useState<SelectImage[]>([])
+  const [targetImage, setTargetImage] = useState<string | null>(null)
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
 
   useEffect(() => {
     if (!query) return;
@@ -61,13 +62,13 @@ function App() {
     getData();
   }, [query, page]);
   
-  const handleSetQuery = (newQuery) => {
+  const handleSetQuery = (newQuery: string) => {
     setQuery(newQuery);
     setArticles([]);
     setPage(1);
   };
 
-  const openModal = (imageUrl) => {
+  const openModal = (imageUrl: string) => {
     setTargetImage(imageUrl);
     setModalIsOpen(true);
   };
@@ -76,6 +77,7 @@ function App() {
     setTargetImage(null);
     setModalIsOpen(false);
   };
+
   const handleClick = () => {
     setPage((prev) => prev + 1);
   };

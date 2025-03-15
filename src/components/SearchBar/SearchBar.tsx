@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import s from './SearchBar.module.css'
 
 const SearchBar = ({ handleSetQuery }) => {
     const [value, setValue] = useState("");
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (!value || value === "") {
             toast("Error nothing. Recieved nothing", {
