@@ -9,12 +9,12 @@
     list-style: none;
 }
 
-.gallery-item {
+.galleryItem {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 
-.gallery-item:hover {
+.galleryItem:hover {
     transform: scale(1.05);
 }
 

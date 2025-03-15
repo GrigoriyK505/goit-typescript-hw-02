@@ -7,7 +7,7 @@ type LoadMoreBtnProps = {
 
 const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ handleClick }) => {
     return (
-        <div>
+        <div className={s.container}>
             <button className={s.button} onClick={handleClick}>Load more</button>
         </div>
     )

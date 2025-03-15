@@ -9,7 +9,6 @@ const Loader: React.FC<LoaderProps> = ({loading}) => {
                 color="#4fa94d"
                 width="100"
                 visible={loading}
-                ariaLabel="falling-circles-loading"
             />
 
         </div>
