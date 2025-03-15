@@ -36,8 +36,7 @@
     object-fit: contain;
 }
 
-/* 🔹 Адаптивність для планшетів */
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .Modal {
         max-width: 90vw;
         max-height: 70vh;
@@ -49,8 +48,7 @@
     }
 }
 
-/* 🔹 Адаптивність для мобільних телефонів */
-@media (max-width: 480px) {
+@media screen and (min-width: 480px) {
     .Modal {
         max-width: 95vw;
         max-height: 65vh;

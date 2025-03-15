@@ -2,8 +2,12 @@ import { FormEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import s from './SearchBar.module.css'
 
-const SearchBar = ({ handleSetQuery }) => {
-    const [value, setValue] = useState("");
+type SearchBarProps = {
+    handleSetQuery: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ handleSetQuery }) => {
+    const [value, setValue] = useState<string>("");
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();

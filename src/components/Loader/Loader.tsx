@@ -1,5 +1,8 @@
 import {FallingLines} from 'react-loader-spinner'
-const Loader = ({loading}) => {
+type LoaderProps = {
+    loading: boolean;
+}
+const Loader: React.FC<LoaderProps> = ({loading}) => {
     return (
         <div>
             <FallingLines

@@ -83,7 +83,7 @@ function App() {
   };
 
   return (
-    <section>
+    <section className={s.container}>
       <Toaster />
       <SearchBar handleSetQuery={handleSetQuery} />
       {!error ? (
